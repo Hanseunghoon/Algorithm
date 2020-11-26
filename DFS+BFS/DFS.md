@@ -9,4 +9,6 @@
 
 단지 번호 붙이기 ([문제](https://www.acmicpc.net/problem/2667) / [소스 코드](https://github.com/Hanseunghoon/Algorithm/blob/main/DFS%2BBFS/%EB%8B%A8%EC%A7%80%EB%B2%88%ED%98%B8%20%EB%B6%99%EC%9D%B4%EA%B8%B0.cpp) / 1이 분리됨 / dfs)
 
-미로 탈출 ([문제](https://www.acmicpc.net/problem/2178) / [소스코드]() / bfs / 미로 게임이랑 똑같음)
+미로 탈출 ([문제](https://www.acmicpc.net/problem/2178) / [소스 코드](https://github.com/Hanseunghoon/Algorithm/blob/main/DFS%2BBFS/%EB%AF%B8%EB%A1%9C%20%ED%83%90%EC%83%89.cpp) / bfs / 미로 게임이랑 똑같음)
+
+문제 ([문제]() / [소스 코드]() / )
