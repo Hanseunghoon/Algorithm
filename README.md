@@ -1,6 +1,19 @@
 # Algorithm
 C++ (DFS/BFS, Greedy, DP, Implementation, Sorting, Search, Shortest Path, Graph)
 
+## 사전 준비
+- 헤더 파일 야매
+```
+#include <bits/stdc++.h>
+```
+
+- cin, cout 속도 올리기
+```
+ios_base :: sync_with_stdio(false);
+cin.tie(NULL);
+cout.tie(NULL);
+```
+
 ## C++ vector
 - 정렬 / 역정렬
 ```
