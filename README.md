@@ -2,7 +2,7 @@
 C++ (DFS/BFS, Greedy, DP, Implementation, Sorting, Search, Shortest Path, Graph)
 
 ## 사전 준비
-- 헤더 파일 ~~야매
+- 헤더 파일 ~~야매~~
 ```
 #include <bits/stdc++.h>
 ```
