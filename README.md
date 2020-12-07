@@ -20,6 +20,12 @@ cout.tie(NULL);
 sort(arr.begin(), arr.end());
 reverse(arr.begin(), arr.end());
 ```
+- 최대값 / 최소값
+```
+#include <algorithm>
+int min = *min_element(vec.begin(), vec.end());
+int max = *max_element(vec.begin(), vec.end());
+```
 
 ## C++ map
 - map 생성 (여러 개)
