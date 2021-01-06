@@ -4,11 +4,12 @@
 
 using namespace std;
 
-int main(void) {
+int main(void)
+{
 	int n, m, max;
 	cin >> n >> m;
 
-	vector <vector<int>> matrix(n, vector<int>(m, 0));
+	vector<vector<int>> matrix(n, vector<int>(m, 0));
 
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < m; j++)
