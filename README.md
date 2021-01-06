@@ -1,6 +1,5 @@
 # Algorithm
-C++ (DFS/BFS, Greedy, DP, Implementation, Sorting, Search, Shortest Path, Graph)
- 
+
 - 헤더 파일
 ```
 #include <bits/stdc++.h>
