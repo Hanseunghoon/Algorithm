@@ -1,7 +1,5 @@
 # Algorithm
-C++ (DFS/BFS, Greedy, DP, Implementation, Sorting, Search, Shortest Path, Graph)
- 
-## 사전 준비
+
 - 헤더 파일
 ```
 #include <bits/stdc++.h>
@@ -12,27 +10,6 @@ C++ (DFS/BFS, Greedy, DP, Implementation, Sorting, Search, Shortest Path, Graph)
 ios_base :: sync_with_stdio(false);
 cin.tie(NULL);
 cout.tie(NULL);
-```
-
-## C++ vector
-- 정렬 / 역정렬
-```
-sort(arr.begin(), arr.end());
-reverse(arr.begin(), arr.end());
-```
-- 최대값 / 최소값
-```
-#include <algorithm>
-int min = *min_element(vec.begin(), vec.end());
-int max = *max_element(vec.begin(), vec.end());
-```
-
-## C++ map
-- map 생성 (여러 개)
-```
-map<int, vector<int>> m;
-m[0] = vector<int> {1, 2, 3};
-cout << m[0][2] << endl;  // 3 출력
 ```
 
 ## 기타 알고리즘
