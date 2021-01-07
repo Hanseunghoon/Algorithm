@@ -4,3 +4,6 @@
 *.app
 note.cpp
 note.*
+
+.vscode
+setting.json
