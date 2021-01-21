@@ -1,5 +1,8 @@
 # Algorithm
 
+## JS Ref
+[헷갈리는 JS 문법](https://www.notion.so/Javascript-d21703ffe7734a6d8f9891ef04b969e3)
+
 ## 기타 알고리즘
 
 - [LIS(가장 긴 증가수열)](https://jason9319.tistory.com/113) 오름차순으로 정렬된 가장 긴 부분 수열 구하기
