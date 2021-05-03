@@ -4,6 +4,6 @@
 *.app
 note.cpp
 note.*
-
+tempCodeRunnerFile.*
 .vscode/
 setting.json
