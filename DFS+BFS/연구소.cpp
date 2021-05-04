@@ -1,27 +1,31 @@
 #include <iostream>
-#include <Algorithm>
+#include <algorithm>
 
 using namespace std;
 
-int n, m;
-int arr[8][8]; // ÃÊ±â ¸Ê ¹è¿­
-int temp[8][8]; // º®À» ¼³Ä¡ÇÑ µÚÀÇ ¸Ê ¹è¿­
+int n, m, res;
+int arr[8][8];	// ì´ˆê¸° ë§µ ë°°ì—´
+int temp[8][8]; // ë²½ì„ ì„¤ì¹˜í•œ ë’¤ì˜ ë§µ ë°°ì—´
 
-// 4°¡Áö ÀÌµ¿ ¹æÇâ¿¡ ´ëÇÑ ¹è¿­
-int dx[] = { -1, 0, 1, 0 };
-int dy[] = { 0, 1, 0, -1 };
+// 4ê°€ì§€ ì´ë™ ë°©í–¥ì— ëŒ€í•œ ë°°ì—´
+int dx[] = {-1, 0, 1, 0};
+int dy[] = {0, 1, 0, -1};
 
-int result;
+// ë°”ì´ëŸ¬ìŠ¤ í™•ì‚°(DFS)
+void virus(int x, int y)
+{
 
-// ±íÀÌ ¿ì¼± Å½»ö(DFS)À» ÀÌ¿ëÇØ °¢ ¹ÙÀÌ·¯½º°¡ »ç¹æÀ¸·Î ÆÛÁöµµ·Ï ÇÏ±â
-void virus(int x, int y) {
-	for (int i = 0; i < 4; i++) {
+	// 4ë°©í–¥ìœ¼ë¡œ í¼ì§ˆ ìˆ˜ ìˆëŠ” ê²½ìš° í™•ì‚°
+	for (int i = 0; i < 4; i++)
+	{
 		int nx = x + dx[i];
 		int ny = y + dy[i];
-		// »ó, ÇÏ, ÁÂ, ¿ì Áß¿¡¼­ ¹ÙÀÌ·¯½º°¡ ÆÛÁú ¼ö ÀÖ´Â °æ¿ì
-		if (nx >= 0 && nx < n && ny >= 0 && ny < m) {
-			if (temp[nx][ny] == 0) {
-				// ÇØ´ç À§Ä¡¿¡ ¹ÙÀÌ·¯½º ¹èÄ¡ÇÏ°í, ´Ù½Ã Àç±ÍÀûÀ¸·Î ¼öÇà
+
+		// ë” ì´ìƒ ê°ˆ ìˆ˜ ì—†ëŠ” ê³³ ì œì™¸ ë°”ì´ëŸ¬ìŠ¤ ê°ì—¼(2)
+		if (nx >= 0 && nx < n && ny >= 0 && ny < m)
+		{
+			if (temp[nx][ny] == 0)
+			{
 				temp[nx][ny] = 2;
 				virus(nx, ny);
 			}
@@ -29,63 +33,82 @@ void virus(int x, int y) {
 	}
 }
 
-// ÇöÀç ¸Ê¿¡¼­ ¾ÈÀü ¿µ¿ªÀÇ Å©±â °è»êÇÏ´Â ¸Ş¼­µå
-int getScore() {
+// ì•ˆì „ ì˜ì—­ ê³„ì‚°
+int getScore()
+{
 	int score = 0;
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
-			if (temp[i][j] == 0) {
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			if (temp[i][j] == 0)
+			{
 				score += 1;
 			}
 		}
 	}
+
 	return score;
 }
 
-// ±íÀÌ ¿ì¼± Å½»ö(DFS)À» ÀÌ¿ëÇØ ¿ïÅ¸¸®¸¦ ¼³Ä¡ÇÏ¸é¼­, ¸Å ¹ø ¾ÈÀü ¿µ¿ªÀÇ Å©±â °è»ê
-void dfs(int count) {
-	// ¿ïÅ¸¸®°¡ 3°³ ¼³Ä¡µÈ °æ¿ì
-	if (count == 3) {
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < m; j++) {
+// ìš¸íƒ€ë¦¬ ì„¤ì¹˜ ë° ì•ˆì „ ì˜ì—­ ê³„ì‚°(DFS)
+void dfs(int count)
+{
+
+	// ìš¸íƒ€ë¦¬ê°€ ì´ 3ê°œ ì„¤ì¹˜ëœ ê²½ìš°
+	if (count == 3)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < m; j++)
+			{
+				// ë‹¤ì‹œ temp ê·¸ë˜í”„ ì´ˆê¸°í™”
 				temp[i][j] = arr[i][j];
 			}
 		}
-		// °¢ ¹ÙÀÌ·¯½ºÀÇ À§Ä¡¿¡¼­ ÀüÆÄ ÁøÇà
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < m; j++) {
-				if (temp[i][j] == 2) {
+
+		// ë°”ì´ëŸ¬ìŠ¤(2)ì¸ ìœ„ì¹˜ì—ì„œ ì „íŒŒ ì§„í–‰
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < m; j++)
+			{
+				if (temp[i][j] == 2)
 					virus(i, j);
-				}
 			}
 		}
-		// ¾ÈÀü ¿µ¿ªÀÇ ÃÖ´ë°ª °è»ê
-		result = max(result, getScore());
+
+		// ì•ˆì „ ì˜ì—­ì˜ ìµœëŒ€ê°’ ê³„ì‚°
+		res = max(res, getScore());
 		return;
 	}
-	// ºó °ø°£¿¡ ¿ïÅ¸¸®¸¦ ¼³Ä¡
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
-			if (arr[i][j] == 0) {
+
+	// ìš¸íƒ€ë¦¬ ì„¤ì¹˜
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			if (arr[i][j] == 0)
+			{
 				arr[i][j] = 1;
 				count += 1;
 				dfs(count);
 				arr[i][j] = 0;
-				count -= 1;
+				count--;
 			}
 		}
 	}
 }
 
-int main(void) {
+int main(void)
+{
+
 	cin >> n >> m;
 
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < m; j++)
 			cin >> arr[i][j];
-		}
-	}
 
 	dfs(0);
-	cout << result << '\n';
+	cout << res;
 }
